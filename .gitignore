@@ -1,0 +1,5 @@
+/dist/
+/build/
+/current_vote.txt
+/run_controller.spec
+/vote_stats.txt
