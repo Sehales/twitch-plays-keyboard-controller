@@ -4,6 +4,7 @@ This project was created as a controller for World of Warships [Start Here](http
 It enables the Twitch Chat to control most parts of the keys neccessary to play World of Warhips. 
 
 A video showing how it can be used can be found [here](https://www.youtube.com/watch?v=LDJnaGyWRwA).
+If you don't have a GitHub account then send a message on [Twitter](https://twitter.com/PelzMorph) 
 
 ## Instructions
 
