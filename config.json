@@ -1,0 +1,35 @@
+{"commands":
+  {
+    "!hupen": "n",
+    "!repair": "r",
+    "!forward": "w",
+    "!left": "a",
+    "!right": "d",
+    "!backwards": "s",
+    "!fire": "0",
+    "!heal": "t",
+    "!aim": "shift",
+    "!speed": "y",
+    "!he": "1",
+    "!ap": "2",
+    "!torpsens": "3",
+    "!stuff": "i",
+    "!heal_different": "u",
+    "!aim_up": "mouse_up",
+    "!aim_down": "mouse_down",
+    "!aim_left": "mouse_left",
+    "!aim_right": "mouse_right"
+},
+  "credentials":
+  {
+    "oauth": "https://twitchapps.com/tmi",
+    "channel": "#YOURCHANNELNAME",
+    "nickname": "YOURCHANNELNAME",
+    "port": 6667,
+    "host": "irc.twitch.tv"
+  },
+  "customize": {
+    "vote_time": 5.0,
+    "chat_text": "Chat will: "
+  }
+}
