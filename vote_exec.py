@@ -2,45 +2,15 @@ import operator
 from queue import Empty
 import time
 
-from input_controls import press_w, press_s, press_d, press_a, set_mouse_pos, press_fire, press_r, press_t, press_shift, \
-    press_n, press_y, press_1, press_2, press_3, press_i, press_u
+from input_controls import set_mouse_pos, press_or_move
+
 
 
 def execute_vote(votes):
     vote = max(votes.items(), key=operator.itemgetter(1))[0]
     print(vote)
 
-    if vote == "w":
-        press_w()
-    elif vote == "s":
-        press_s()
-    elif vote == "d":
-        press_d()
-    elif vote == "a":
-        press_a()
-    elif vote == "0":
-        press_fire()
-    elif vote == "r":
-        press_r()
-    elif vote == "t":
-        press_t()
-    elif vote == "shift":
-        press_shift()
-    elif vote == "n":
-        press_n()
-    elif vote == "y":
-        press_y()
-    elif vote == "1":
-        press_1()
-    elif vote == "2":
-        press_2()
-    elif vote == "3":
-        press_3()
-    elif vote == "i":
-        press_i()
-    elif vote == "u":
-        press_u()
-    elif vote == "mouse_up":
+    if vote == "mouse_up":
         set_mouse_pos(vote)
     elif vote == "mouse_down":
         set_mouse_pos(vote)
@@ -48,6 +18,8 @@ def execute_vote(votes):
         set_mouse_pos(vote)
     elif vote == "mouse_right":
         set_mouse_pos(vote)
+    else:
+        press_or_move(vote)
 
     return vote
 

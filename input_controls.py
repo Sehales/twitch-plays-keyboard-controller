@@ -1,4 +1,5 @@
 import ctypes
+import functools
 from _ctypes import Structure
 from ctypes import wintypes
 import time
@@ -201,79 +202,29 @@ def press(key, press_time):
     release_key(key)
 
 
-def press_w():
-    press(VK_W, 0.01)
-
-
-def press_a():
-    press(VK_A, 4.01)
-
-
-def press_s():
-    press(VK_S, 0.01)
-
-
-def press_d():
-    press(VK_D, 4.01)
-
-
 def press_fire():
     press(VK_0, 0.01)
     time.sleep(0.01)
     press(VK_0, 0.01)
 
 
-def press_t():
-    press(VK_T, 0.01)
-
-
-def press_r():
-    press(VK_R, 0.01)
-
-
-def press_y():
-    press(VK_Y, 0.01)
-
-
-def press_i():
-    press(VK_I, 0.01)
-
-
-def press_u():
-    press(VK_U, 0.01)
-
-
-def press_shift():
-    press(VK_SHIFT, 0.01)
-
-
-def press_n():
-    press(VK_N, 0.01)
-
-
-def press_1():
-    press(VK_1, 0.01)
-
-
-def press_2():
-    press(VK_2, 0.01)
-
-
-def press_3():
-    press(VK_3, 0.01)
-
-
-if __name__ == "__main__":
-
-    time.sleep(2.0)
-    for i in range(1, 20):
-        for j in ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s"]:
-            time.sleep(0.1)
-
-            vote = j + str(i)
-
-            c, num = vote[0], vote[1:]
-            y = int(num) * 54
-            x = 96 + (ord(c) - 97) * 96
-            print("cord: %s %s" % (str(x), str(y)))
-            set_mouse_pos("down")
+KEYS = {
+    "w": functools.partial(press, VK_W, 0.01),
+    "3": functools.partial(press, VK_3, 0.01),
+    "2": functools.partial(press, VK_2, 0.01),
+    "1": functools.partial(press, VK_1, 0.01),
+    "n": functools.partial(press, VK_N, 0.01),
+    "shift": functools.partial(press, VK_SHIFT, 0.01),
+    "u": functools.partial(press, VK_U, 0.01),
+    "i": functools.partial(press, VK_I, 0.01),
+    "y": functools.partial(press, VK_Y, 0.01),
+    "r": functools.partial(press, VK_R, 0.01),
+    "t": functools.partial(press, VK_T, 0.01),
+    "fire": press_fire,
+    "a": functools.partial(press, VK_A, 0.01),
+    "s": functools.partial(press, VK_S, 0.01),
+    "d": functools.partial(press, VK_D, 0.01),
+}
+def press_or_move(key):
+    if key in KEYS:
+        KEYS[key]()
