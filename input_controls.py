@@ -39,6 +39,8 @@ VK_3 = 0x33
 
 VK_SHIFT = 0x10
 
+VK_LBUTTON = 0x01
+VK_CONTROL = 0x11
 
 # C struct definitions
 wintypes.ULONG_PTR = wintypes.WPARAM
@@ -224,6 +226,8 @@ KEYS = {
     "a": functools.partial(press, VK_A, 0.01),
     "s": functools.partial(press, VK_S, 0.01),
     "d": functools.partial(press, VK_D, 0.01),
+    "leftmouse": functools.partial(press, VK_LBUTTON, 0.01),
+    "control": functools.partial(press, VK_CONTROL, 0.01)
 }
 def press_or_move(key):
     if key in KEYS:
