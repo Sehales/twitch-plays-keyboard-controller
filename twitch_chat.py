@@ -105,6 +105,8 @@ def run_twitch_chat(queue, resp_queue, commands, config):
         except socket.error:
             print("Socket died - retrying")
             con = establish_connection(config)
+        except Exception as e:
+            print("General Error: "+str(e))
         try:
             response = resp_queue.get(timeout=0.001)
             send_message(config["credentials"]["channel"], con, response)
