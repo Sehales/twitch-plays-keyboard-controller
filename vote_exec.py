@@ -51,8 +51,8 @@ def run_vote(queue, response_queue, txt_updater, config, owner_name):
         if td > config["vote_time"] and not paused:
             print("Checking vote")
             if len(current_vote) > 0:
-                response_queue.put_nowait(config["chat_text"] + response)
                 response = execute_vote(current_vote)
+                response_queue.put_nowait(config["chat_text"] + response)
             current_vote = {}
             last_vote_start = time.time()
         txt_updater.put_nowait({"type": "count", "content": current_vote})
