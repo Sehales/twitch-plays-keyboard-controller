@@ -36,11 +36,20 @@ VK_0 = 0x30
 VK_1 = 0x31
 VK_2 = 0x32
 VK_3 = 0x33
+VK_4 = 0x34
+VK_5 = 0x35
+VK_6 = 0x36
+VK_7 = 0x37
+VK_8 = 0x38
+VK_9 = 0x39
 
 VK_SHIFT = 0x10
 
 VK_LBUTTON = 0x01
 VK_CONTROL = 0x11
+VK_BACKSPACE = 0x08
+VK_SPACE = 0x20
+VK_ENTER = 0x0D
 
 # C struct definitions
 wintypes.ULONG_PTR = wintypes.WPARAM
@@ -212,9 +221,6 @@ def press_fire():
 
 KEYS = {
     "w": functools.partial(press, VK_W, 0.01),
-    "3": functools.partial(press, VK_3, 0.01),
-    "2": functools.partial(press, VK_2, 0.01),
-    "1": functools.partial(press, VK_1, 0.01),
     "n": functools.partial(press, VK_N, 0.01),
     "shift": functools.partial(press, VK_SHIFT, 0.01),
     "u": functools.partial(press, VK_U, 0.01),
@@ -227,7 +233,20 @@ KEYS = {
     "s": functools.partial(press, VK_S, 0.01),
     "d": functools.partial(press, VK_D, 0.01),
     "leftmouse": functools.partial(press, VK_LBUTTON, 0.01),
-    "control": functools.partial(press, VK_CONTROL, 0.01)
+    "backspace": functools.partial(press, VK_BACKSPACE, 0.01),
+    "enter": functools.partial(press, VK_ENTER, 0.01),
+    "space": functools.partial(press, VK_SPACE, 0.01),
+    "3": functools.partial(press, VK_3, 0.01),
+    "2": functools.partial(press, VK_2, 0.01),
+    "1": functools.partial(press, VK_1, 0.01),
+    "4": functools.partial(press, VK_4, 0.01),
+    "5": functools.partial(press, VK_5, 0.01),
+    "6": functools.partial(press, VK_6, 0.01),
+    "7": functools.partial(press, VK_7, 0.01),
+    "8": functools.partial(press, VK_8, 0.01),
+    "9": functools.partial(press, VK_9, 0.01),
+    "0": functools.partial(press, VK_0, 0.01)
+
 }
 def press_or_move(key):
     if key in KEYS:
